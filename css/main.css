@@ -1,13 +1,13 @@
+
+@font-face {
+    font-family: CarGo;
+    src: url("CarGoFrame31Demo-1Bg2.ttf");
+}
+
 body{
     background-color: rgb(255, 255, 255);
 }
-/* .card{
-    background-color: rgba(88, 255, 118, 0.098);
-    box-shadow: 0 0 6px gray;
-    border-radius: 15px;
-    border: 1px green solid;
-    color: green;
-} */
+
 
 li{
     list-style: none;
@@ -19,5 +19,38 @@ li{
     justify-content: center;
     background-color: rgb(249, 249, 249);
     border-radius: 10px;
+    font-family: CarGo;
+    font-size: 2rem;
 }
 
+
+#cpt-card{
+    border-left: 4px blue solid; 
+    border-radius: 0px;
+    background: rgba(14, 14, 255, 0.072);
+}
+#stellies-card{
+    border-left: 4px blue solid; 
+    border-radius: 0px;
+    background: rgba(14, 14, 255, 0.072);
+}
+#bellville-card{
+    border-left: 4px blue solid; 
+    border-radius: 0px;
+    background: rgba(14, 14, 255, 0.072);
+}
+#paarl-card{
+    border-left: 4px blue solid; 
+    border-radius: 0px;
+    background: rgba(14, 14, 255, 0.072);
+}
+#kr-card{
+    border-left: 4px blue solid; 
+    border-radius: 0px;
+    background: rgba(14, 14, 255, 0.072);
+}
+#malmesbury-card{
+    border-left: 4px blue solid; 
+    border-radius: 0px;
+    background: rgba(14, 14, 255, 0.072);
+}

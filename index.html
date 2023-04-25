@@ -14,7 +14,11 @@
             <br /><br />
             <div class="row justify-content-center">
                 <div class="col-6">
+                    <center>
+
+                    
                     <h1>Registration Numbers</h1>
+                    <br>
                     <div class="d-flex">
                         <input style="height: 40px" class="form-control reg-num-input" placeholder="registration number" />
                         &nbsp;&nbsp;&nbsp;
@@ -22,10 +26,7 @@
                             <button style="width: 80px; height: 40px" id="add-btn" class="btn btn-success btn-sm">add</button>
                         </span>
                     </div>
-                    <!-- <center>
-                        
-                        <button style="width: 80px" id="clear-btn" class="btn btn-secondary btn-sm">clear</button>
-                    </center> -->
+                </center>
                 </div>
             </div>
             <br />
@@ -55,7 +56,12 @@
                                             <option><a class="dropdown-item" onclick="filterBtnClicked('CY')" href="#">Bellville</a></option>
                                         </ul>
                                     </div>
-                                    <button style="width: 80px;background: none;border: none;" id="clear-btn" class="btn  btn-sm">clear</button>
+                                    <button style="width: 80px;margin-left: 1rem;border: none;" id="clear-btn" class="btn btn-outline-secondary btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                                          </svg> &nbsp;
+                                    Clear
+                                    </button>
                                 </div>
                                 <hr>
 
@@ -68,10 +74,11 @@
                     </div>
 
                     <div class="col-7">
-                        <h5>Locations (5)</h5>
+                        <h5>Towns Statistics</h5>
+                        <p>total (12) </p>
                         <div class="row">
                             <div class="col-4">
-                                <div style="border-left: 4px blue solid; border-radius: 0px" class="card card-body">
+                                <div id="cpt-card" class="card card-body">
                                     <center>
                                         <h2 id="cape_town_counter"><strong>0</strong></h2>
                                         <p>Cape Town</p>
@@ -79,7 +86,7 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div style="border-left: 4px rgb(195, 4, 205) solid; border-radius: 0px" class="card card-body">
+                                <div id="stellies-card"  class="card card-body">
                                     <center>
                                         <h2 id="stellenbosch_counter"><strong>0</strong></h2>
                                         <p>Stellenbosch</p>
@@ -87,7 +94,7 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div style="border-left: 4px rgb(225, 206, 0) solid; border-radius: 0px" class="card card-body">
+                                <div id="bellville-card" class="card card-body">
                                     <center>
                                         <h2 id="bellville_counter"><strong>0</strong></h2>
                                         <p>Bellville</p>
@@ -99,7 +106,7 @@
 
                         <div class="row">
                             <div class="col-4">
-                                <div style="border-left: 4px rgb(255, 34, 115) solid; border-radius: 0px" class="card card-body">
+                                <div id="kr-card" class="card card-body">
                                     <center>
                                         <h2 id="kuils_river_counter"><strong>0</strong></h2>
                                         <p>Kuils River</p>
@@ -107,7 +114,7 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div style="border-left: 4px rgb(255, 135, 37) solid; border-radius: 0px" class="card card-body">
+                                <div id="paarl-card" class="card card-body">
                                     <center>
                                         <h2 id="paarl_counter"><strong>0</strong></h2>
                                         <p>Paarl</p>
@@ -115,7 +122,7 @@
                                 </div>
                             </div>
                             <div class="col-4">
-                                <div style="border-left: 4px rgb(32, 255, 77) solid; border-radius: 0px" class="card card-body">
+                                <div id="malmesbury-card" class="card card-body">
                                     <center>
                                         <h2 id="malmesbury_counter"><strong>0</strong></h2>
                                         <p>Malmesbury</p>
