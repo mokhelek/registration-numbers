@@ -68,10 +68,11 @@ function townCounters() {
 }
 
 function addRegistration() {
-    if (regFactory.handleDuplicates(regInput.value)) {
+    let duplicateError = document.querySelector("#duplicate-error")
+    if (regFactory.handleDuplicates(regInput.value.toUpperCase())) {
         const listItem = document.createElement("li");
 
-        regFactory.addRegNum(regInput.value);
+        regFactory.addRegNum(regInput.value.toUpperCase());
 
         listItem.textContent = registrationNumbers[registrationNumbers.length - 1];
         regNumList.appendChild(listItem);
@@ -80,7 +81,10 @@ function addRegistration() {
 
         townCounters();
     } else {
-        alert("Its a duplicates");
+        duplicateError.style.display = "block"
+        setTimeout(function (){
+            duplicateError.style.display = "none"
+        },3000)
     }
 }
 
