@@ -1,6 +1,23 @@
+body{
+    background-color: rgb(255, 255, 255);
+}
+/* .card{
+    background-color: rgba(88, 255, 118, 0.098);
+    box-shadow: 0 0 6px gray;
+    border-radius: 15px;
+    border: 1px green solid;
+    color: green;
+} */
+
 li{
     list-style: none;
     padding: 0.8rem;
     border: 1px gray solid;
     margin: 0.5rem;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    background-color: rgb(249, 249, 249);
+    border-radius: 10px;
 }
+
