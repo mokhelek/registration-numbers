@@ -62,27 +62,37 @@ describe("Testing The City/Town Registration Counter Functionality", function ()
         let regNumbersFunction = regNumbersFactory()
         
         regNumbersFunction.addRegNum("CA123")
+        regNumbersFunction.countForTown()
         regNumbersFunction.addRegNum("CY123")
+        regNumbersFunction.countForTown()
         regNumbersFunction.addRegNum("CF123")
+        regNumbersFunction.countForTown()
         regNumbersFunction.addRegNum("CA1515")
+        regNumbersFunction.countForTown()
 
 
-        assert.equal( 2, regNumbersFunction.countForTown()["Cape Town"] ); 
+        
+        assert.equal( 2, regNumbersFunction.getCountingPlaces()["Cape Town"] ); 
     })
     it("Should return 4 because there are 4 Towns with CF (Kuils River) ", function (){
         let regNumbersFunction = regNumbersFactory()
         
         regNumbersFunction.addRegNum("CA1232")
+        regNumbersFunction.countForTown()
         regNumbersFunction.addRegNum("CY123")
-        regNumbersFunction.addRegNum("CF12344")
+        regNumbersFunction.countForTown()
         regNumbersFunction.addRegNum("CF1233")
+        regNumbersFunction.countForTown()
         regNumbersFunction.addRegNum("CF123")
+        regNumbersFunction.countForTown()
         regNumbersFunction.addRegNum("CY123")
+        regNumbersFunction.countForTown()
         regNumbersFunction.addRegNum("CF1253")
-        regNumbersFunction.addRegNum("CA1515")
+        regNumbersFunction.countForTown()
+        regNumbersFunction.addRegNum("CF1753")
+ 
 
-
-        assert.equal( 4, regNumbersFunction.countForTown()["Kuils River"] ); 
+        assert.equal( 4, regNumbersFunction.getCountingPlaces()["Kuils River"] ); 
     })
 
 })

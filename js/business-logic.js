@@ -33,9 +33,8 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
         });
         return filteredArray;
     }
-
     function countForTown() {
-        if (regNumbersData[regNumbersData.length - 1].startsWith("CA")) {
+        if (registrationNumbers[registrationNumbers.length - 1].startsWith("CA")) {
             countingPlaces["Cape Town"]++;
         } else if (registrationNumbers[registrationNumbers.length - 1].startsWith("CJ")) {
             countingPlaces["Paarl"]++;
@@ -51,7 +50,6 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
             alert("unknown location");
         }
 
-        console.log(countingPlaces);
     }
     function getCountingPlaces() {
         return countingPlaces;
