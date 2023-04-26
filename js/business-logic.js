@@ -1,7 +1,7 @@
 function regNumbersFactory(regNumbersData, countPlacesData) {
     let registrationNumbers = regNumbersData || [];
     let countingPlaces = countPlacesData || { "Cape Town": 0, Paarl: 0, Bellville: 0, Stellenbosch: 0, "Kuils River": 0, Malmesbury: 0 };
-
+    let registrationFormat =  /^[a-zA-Z]{0,3}\s*\d{3,6}$/
     function handleDuplicates(regNum) {
         if (!registrationNumbers.includes(regNum)) {
             return true;
@@ -33,6 +33,11 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
         });
         return filteredArray;
     }
+
+    function regFormatCheck(input){
+        return registrationFormat.test(input)
+    }
+
     function countForTown() {
         if (registrationNumbers[registrationNumbers.length - 1].startsWith("CA")) {
             countingPlaces["Cape Town"]++;
@@ -64,6 +69,8 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
         countForTown,
         handleDuplicates,
         getCountingPlaces,
+        regFormatCheck,
+        
     
     };
 }

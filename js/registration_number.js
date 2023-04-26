@@ -80,23 +80,33 @@ function townCounters() {
 function addRegistration() {
     let duplicateError = document.querySelector("#duplicate-error");
     let emptyInputError = document.querySelector("#empty-input-error");
+    let formatError = document.querySelector("#format-error");
+
 
     if (regInput.value != "") {
-        if (regFactory.handleDuplicates(regInput.value.toUpperCase())) {
-            const listItem = document.createElement("li");
+        if(regFactory.regFormatCheck(regInput.value.replace(/\s/g,""))) {
 
-            regFactory.addRegNum(regInput.value.toUpperCase());
-
-            listItem.textContent = registrationNumbers[registrationNumbers.length - 1];
-            regNumList.appendChild(listItem);
-
-            localStorage["regNumbersList"] = regFactory.getRegistrations();
-
-            townCounters();
-        } else {
-            duplicateError.style.display = "block";
+            if (regFactory.handleDuplicates( (regInput.value.toUpperCase()).replace(/\s/g,"") )) {
+                const listItem = document.createElement("li");
+    
+                regFactory.addRegNum(( regInput.value.toUpperCase()).replace(/\s/g,"") );
+    
+                listItem.textContent = registrationNumbers[registrationNumbers.length - 1];
+                regNumList.appendChild(listItem);
+    
+                localStorage["regNumbersList"] = regFactory.getRegistrations();
+    
+                townCounters();
+            } else {
+                duplicateError.style.display = "block";
+                setTimeout(function () {
+                    duplicateError.style.display = "none";
+                }, 3000);
+            }
+        }else{
+            formatError.style.display = "block";
             setTimeout(function () {
-                duplicateError.style.display = "none";
+                formatError.style.display = "none";
             }, 3000);
         }
     } else {
