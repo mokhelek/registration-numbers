@@ -4,7 +4,7 @@
 }
 @font-face {
     font-family: Adventure;
-    src: url("Adventure-YGZ2.ttf");
+    src: url("/css/CarGoPlain31Demo-npBg.ttf");
 }
 
 body {
@@ -13,10 +13,12 @@ body {
 
 #title {
     font-family: Adventure;
-    font-size: 3rem;
-    background: linear-gradient(to left, rgba(134, 134, 134, 0.641) 25%, rgb(30, 30, 30) 100%) !important;
+    font-size: 2.5rem;
+    /* background: linear-gradient(to left, rgba(134, 134, 134, 0.641) 25%, rgb(0, 2, 50) 100%) !important;
     -webkit-background-clip: text !important;
     -webkit-text-fill-color: transparent !important;
+     */
+     color:rgb(48, 48, 48);
 }
 
 li {
@@ -42,36 +44,39 @@ li {
 }
 
 #cpt-card {
-    border-left: 4px rgba(0, 0, 255, 0.215) solid;
+    border-left: 4px rgba(0, 0, 255, 0.285) solid;
     border-radius: 0px;
     /* background: rgba(14, 14, 255, 0.072); */
 }
 #stellies-card {
-    border-left: 4px rgb(255, 208, 0) solid;
+    border-left: 4px rgba(255, 208, 0, 0.327) solid;
     border-radius: 0px;
     /* background: rgba(255, 203, 14, 0.072); */
 }
 #bellville-card {
-    border-left: 4px rgb(0, 191, 35) solid;
+    border-left: 4px rgb(0, 191, 35, 0.285) solid;
     border-radius: 0px;
     /* background: rgba(14, 255, 74, 0.072); */
 }
 #paarl-card {
-    border-left: 4px rgb(255, 0, 200) solid;
+    border-left: 4px rgb(255, 0, 200, 0.285) solid;
     border-radius: 0px;
     /* background: rgba(255, 14, 223, 0.072); */
 }
 #kr-card {
-    border-left: 4px rgb(255, 208, 0) solid;
+    border-left: 4px rgba(255, 51, 0, 0.285) solid;
     border-radius: 0px;
     /* background: rgba(255, 203, 14, 0.072); */
 }
 #malmesbury-card {
-    border-left: 4px blue solid;
+    border-left: 4px rgba(0, 204, 255, 0.285) solid;
     border-radius: 0px;
     /* background: rgba(14, 14, 255, 0.072); */
 }
-
+.card{
+    border-left: 4px rgba(0, 76, 255, 0.407) solid !important;
+    box-shadow: 0 0 6px rgb(122, 122, 122);
+}
 .errors{
     background-color: rgba(255, 0, 0, 0.124);
     padding: 0.6rem;
