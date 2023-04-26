@@ -8,7 +8,7 @@
 }
 
 body {
-    background-color: rgb(251, 251, 251);
+    background-color: rgb(255, 255, 255);
 }
 
 #title {
@@ -42,7 +42,7 @@ li {
 }
 
 #cpt-card {
-    border-left: 4px blue solid;
+    border-left: 4px rgba(0, 0, 255, 0.215) solid;
     border-radius: 0px;
     /* background: rgba(14, 14, 255, 0.072); */
 }

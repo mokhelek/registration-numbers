@@ -1,6 +1,6 @@
 function regNumbersFactory(regNumbersData, countPlacesData) {
     let registrationNumbers = regNumbersData || [];
-    let countingPlaces = countPlacesData || {"Cape Town": 0,"Paarl": 0,"Bellville": 0,"Stellenbosch": 0,"Kuils River": 0,"Malmesbury": 0,} ;
+    let countingPlaces = countPlacesData || { "Cape Town": 0, Paarl: 0, Bellville: 0, Stellenbosch: 0, "Kuils River": 0, Malmesbury: 0 };
 
     function handleDuplicates(regNum) {
         if (!registrationNumbers.includes(regNum)) {
@@ -49,11 +49,12 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
         } else {
             alert("unknown location");
         }
-
     }
+
     function getCountingPlaces() {
         return countingPlaces;
     }
+  
 
     return {
         addRegNum,
@@ -63,5 +64,6 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
         countForTown,
         handleDuplicates,
         getCountingPlaces,
+    
     };
 }

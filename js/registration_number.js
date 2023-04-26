@@ -5,7 +5,7 @@ if (localStorage["regNumbersList"]) {
 
 let countingPlaces = regNumbersFactory(registrationNumbers).getCountingPlaces();
 if (localStorage["counting_towns"]) {
-    countingPlaces = JSON.parse(localStorage["counting_towns"]) ;
+    countingPlaces = JSON.parse(localStorage["counting_towns"]);
 }
 
 let regFactory = regNumbersFactory(registrationNumbers, countingPlaces); // ? my instance variable
@@ -36,20 +36,28 @@ paarlCounter.textContent = countingPlaces["Paarl"];
 krCounter.textContent = countingPlaces["Kuils River"];
 malmesburyCounter.textContent = countingPlaces["Malmesbury"];
 
+
 // ************************************** END  *****************************************
 
 // ************************** Filtered Display Of Registration Numbers *******************
 function displayFilteredReg() {
+
     let regList = document.querySelectorAll("li");
+    let notFound = document.querySelector(".not-found");
+    notFound.style.display = "none" 
     regList.forEach(function (e) {
         e.style.display = "none";
     });
-
-    for (let i = 0; i < registrationNumbers.length; i++) {
-        const listItem = document.createElement("li");
-
-        listItem.textContent = registrationNumbers[i];
-        regNumList.appendChild(listItem);
+    if(registrationNumbers.length > 0){
+    
+        for (let i = 0; i < registrationNumbers.length; i++) {
+            const listItem = document.createElement("li");
+    
+            listItem.textContent = registrationNumbers[i];
+            regNumList.appendChild(listItem);
+        }
+    }else{
+        notFound.style.display = "block"
     }
 }
 // ************************************** END  *****************************************
@@ -67,24 +75,35 @@ function townCounters() {
     localStorage["counting_towns"] = JSON.stringify(regFactory.getCountingPlaces());
 }
 
+
+
 function addRegistration() {
-    let duplicateError = document.querySelector("#duplicate-error")
-    if (regFactory.handleDuplicates(regInput.value.toUpperCase())) {
-        const listItem = document.createElement("li");
+    let duplicateError = document.querySelector("#duplicate-error");
+    let emptyInputError = document.querySelector("#empty-input-error");
 
-        regFactory.addRegNum(regInput.value.toUpperCase());
+    if (regInput.value != "") {
+        if (regFactory.handleDuplicates(regInput.value.toUpperCase())) {
+            const listItem = document.createElement("li");
 
-        listItem.textContent = registrationNumbers[registrationNumbers.length - 1];
-        regNumList.appendChild(listItem);
+            regFactory.addRegNum(regInput.value.toUpperCase());
 
-        localStorage["regNumbersList"] = regFactory.getRegistrations();
+            listItem.textContent = registrationNumbers[registrationNumbers.length - 1];
+            regNumList.appendChild(listItem);
 
-        townCounters();
+            localStorage["regNumbersList"] = regFactory.getRegistrations();
+
+            townCounters();
+        } else {
+            duplicateError.style.display = "block";
+            setTimeout(function () {
+                duplicateError.style.display = "none";
+            }, 3000);
+        }
     } else {
-        duplicateError.style.display = "block"
-        setTimeout(function (){
-            duplicateError.style.display = "none"
-        },3000)
+        emptyInputError.style.display = "block";
+        setTimeout(function () {
+            emptyInputError.style.display = "none";
+        }, 3000);
     }
 }
 
