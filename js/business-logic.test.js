@@ -96,3 +96,48 @@ describe("Testing The City/Town Registration Counter Functionality", function ()
     })
 
 })
+
+describe("Testing user inputs if they are correct format", function(){
+    it("It should return FALSE if input doest not start with letter", function (){
+        let regNumbersFunction = regNumbersFactory()
+        let regNumber = "25CS449"
+
+
+        assert.equal(false,regNumbersFunction.regFormatCheck(regNumber)) ;
+    })
+    it("It should return FALSE if input has less than 3 numbers", function (){
+        let regNumbersFunction = regNumbersFactory()
+        let regNumber = "CA12"
+
+
+        assert.equal(false,regNumbersFunction.regFormatCheck(regNumber)) ;
+    })
+    it("It should return FALSE if input has more than 6 numbers", function (){
+        let regNumbersFunction = regNumbersFactory()
+        let regNumber = "CA5125874"
+
+
+        assert.equal(false,regNumbersFunction.regFormatCheck(regNumber)) ;
+    })
+    it("It should return FALSE if input includes symbols", function (){
+        let regNumbersFunction = regNumbersFactory()
+        let regNumber = "CA12587!"
+
+
+        assert.equal(false,regNumbersFunction.regFormatCheck(regNumber)) ;
+    })
+    it("It should return TRUE if input includes spaces", function (){
+        let regNumbersFunction = regNumbersFactory()
+        let regNumber = "CK 123 548"
+
+
+        assert.equal(true,regNumbersFunction.regFormatCheck(regNumber)) ;
+    })
+    it("It should return TRUE if input includes a hyphen", function (){
+        let regNumbersFunction = regNumbersFactory()
+        let regNumber = "CK 123-548"
+
+
+        assert.equal(true,regNumbersFunction.regFormatCheck(regNumber)) ;
+    })
+})
