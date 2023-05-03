@@ -139,8 +139,50 @@ clearButton.addEventListener("click", function () {
 
 let dropDown = document.querySelector("#dropDown");
 
+function cleanSelected(){
+    let selectedClass = document.querySelectorAll(".selected-card");
+    selectedClass.forEach((item)=>{
+        item.classList.remove("selected-card")
+    })
+}
+
 dropDown.addEventListener("change",function(){
     registrationNumbers = regFactory.filterRegNumbers(dropDown.value);
+    let className = "selected-card"
+    let cpt_card = cptCounter.parentElement ;
+    let kr_card = krCounter.parentElement ;
+    let bellville_card = bellvilleCounter.parentElement ;
+    let paarl_card =paarlCounter.parentElement ;
+    let stellenbosch_card = stellenboschCounter.parentElement ;
+    let malmesbury_card = malmesburyCounter.parentElement ;
+    
+    if(dropDown.value == "CA"){
+       cleanSelected()
+       cpt_card.classList.add(className)
+       
+    }else if(dropDown.value == "CF"){
+        cleanSelected()
+        kr_card.classList.add(className)
+        
+    }else if(dropDown.value == "CL"){
+        cleanSelected()
+        stellenbosch_card.classList.add(className)
+        
+    }else if(dropDown.value == "CY"){
+        cleanSelected()
+        bellville_card.classList.add(className)
+
+    }else if(dropDown.value == "CK"){
+        cleanSelected()
+        malmesbury_card.classList.add(className)
+
+    }else if(dropDown.value == "CJ"){
+        cleanSelected()
+        paarl_card.classList.add(className)
+        
+    }else{
+        cleanSelected()  
+    }
     displayFilteredReg();
 })
 

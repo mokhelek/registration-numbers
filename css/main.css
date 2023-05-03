@@ -36,10 +36,12 @@ body {
     color: black;
 }
 
-/* #dropdown-menu li{
-    font-family: sans-serif !important;
-    font-size: 1rem;
-} */
+select{
+    border-radius: 0;
+    padding: 0.45rem;
+    background-color: rgb(237, 237, 237);
+    border: 1px rgb(182, 182, 182) solid;
+}
 
 #town {
     color: rgb(118, 117, 117);
@@ -79,8 +81,12 @@ body {
     /* background: rgba(14, 14, 255, 0.072); */
 }
 .card{
-    border-left: 4px rgba(0, 76, 255, 0.407) solid !important;
-    box-shadow: 0 0 6px rgb(122, 122, 122);
+    border-left: 4px rgba(0, 76, 255, 0.518) solid !important;
+    /* box-shadow: 0 0 6px rgb(122, 122, 122); */
+}
+.selected-card{
+    background-color: rgba(118, 118, 255, 0.2);
+    border: 1px rgb(68, 68, 255) solid;
 }
 .errors{
     background-color: rgba(255, 0, 0, 0.124);
