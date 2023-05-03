@@ -27,11 +27,15 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
 
     function filterRegNumbers(town) {
         let filteredArray = [];
-        registrationNumbers.filter(function (regNum) {
-            if (regNum.startsWith(town)) {
-                filteredArray.push(regNum);
-            }
-        });
+        if(town == "ALL"){
+            filteredArray = registrationNumbers ;
+        }else{
+            registrationNumbers.filter(function (regNum) {
+                if (regNum.startsWith(town)) {
+                    filteredArray.push(regNum);
+                }
+            });
+        }
         return filteredArray;
     }
 

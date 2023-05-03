@@ -84,6 +84,52 @@
             <div class="container">
                 <div class="row justify-content-center">
 
+                    <div class="col-lg-5">
+                        <br />
+                        <div style="height: 600px; overflow-y: scroll">
+                            <div class="container" style="border-right: 1px rgb(177, 177, 177) solid">
+                                <div class="d-flex justify-content-end">
+
+
+
+                                    <select id="dropDown" > <!-- todo : ##################################### -->
+                                        <option value="ALL">  All Towns </option>
+                                        <option  value="CA">  Cape Town </option>
+                                        <option  value = "CL"> Stellenbosch  </option>
+                                        <option  value = "CF">  Kuils River </option>
+                                        <option  value = "CK">   Malmesbury </option>
+                                        <option  value = "CJ">  Paarl </option>
+                                        <option  value = CY>  Bellville</option>
+                                    </select>
+
+                                    <!-- todo: #########################  Trigger a confirm message instead #############################   -->
+                                    <button style="width: 80px; margin-left: 1rem; border: none" id="clear-btn" class="btn btn-outline-secondary btn-sm">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
+                                        </svg>
+                                        &nbsp; Clear
+                                    </button>
+                                </div>
+                                <hr />
+
+                                <center>
+                                    <div class="reg-nums-list">
+                                        <div style="display: none;" class="not-found" >
+                                            <center>
+                                                <p>
+                                                    No registration found for this location
+                                                </p>
+                                                <br>
+                                                <img style="width:40%" src="css/undraw_void_-3-ggu.svg" alt="">
+                                            </center>
+                                        </div>
+                                    </div>
+                                </center>
+                            </div>
+                        </div>
+                    </div>
+
+
                     <div class="col-lg-7">
                         <h5>Towns Statistics</h5>
                         <!-- <p style="color: gray ;">Total (<span id="regs-total" > </span>) </p> -->
@@ -142,77 +188,6 @@
                             </div>
                         </div>
                         <br />
-                    </div>
-
-                    <div class="col-lg-5">
-                        <br />
-                        <div style="height: 700px; overflow-y: scroll">
-                            <div class="container" style="border-left: 1px rgb(177, 177, 177) solid">
-                                <div class="d-flex justify-content-start">
-
-
-
-                                    <select id="dropDown" > <!-- todo : ##################################### -->
-                                        <option value="ALL">  All Towns </option>
-                                        <option  value="CA">  Cape Town </option>
-                                        <option  value = "CL"> Stellenbosch  </option>
-                                        <option  value = "CF">  Kuils River </option>
-                                        <option  value = "CK">   Malmesbury </option>
-                                        <option  value = "CJ">  Paarl </option>
-                                        <option  value = CY>  Bellville</option>
-                                    </select>
-
-                                    <!-- <div class="btn-group">
-                                        <button type="button" id="filter-btn" class="btn btn-outline-secondary btn-sm">Filter</button>
-                                        <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span class="visually-hidden">Toggle Dropdown</span>
-                                        </button>
-
-                                        <ul id="dropdown-menu" class="dropdown-menu">
-                                            <li><a class="dropdown-item" onclick="location.reload()" href="#">All Towns</a></li>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CA')" href="#">Cape Town</a></li>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CL')" href="#">Stellenbosch</a></li>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CF')" href="#">Kuils River</a></li>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CK')" href="#">Malmesbury</a></li>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CJ')" href="#">Paarl</a></li>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CY')" href="#">Bellville</a></li>
-                                        </ul>
-
-                                        <select id="dropdown-menu" class="dropdown-menu">
-                                            <option onclick="location.reload()"><a  href="#">All Towns</a></option>
-                                            <option><a  onclick="filterBtnClicked('CA')" href="#">Cape Town</a></option>
-                                            <option><a  onclick="filterBtnClicked('CL')" href="#">Stellenbosch</a></option>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CF')" href="#">Kuils River</a></li>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CK')" href="#">Malmesbury</a></li>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CJ')" href="#">Paarl</a></li>
-                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CY')" href="#">Bellville</a></li>
-                                        </select>
-                                    </div> -->
-                                    <!-- todo: #########################  Trigger a confirm message instead #############################   -->
-                                    <button style="width: 80px; margin-left: 1rem; border: none" id="clear-btn" class="btn btn-outline-secondary btn-sm">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
-                                            <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5ZM11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0H11Zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5h9.916Zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z" />
-                                        </svg>
-                                        &nbsp; Clear
-                                    </button>
-                                </div>
-                                <hr />
-
-                                <center>
-                                    <div class="reg-nums-list">
-                                        <div style="display: none;" class="not-found" >
-                                            <center>
-                                                <p>
-                                                    No registration found for this location
-                                                </p>
-                                                <br>
-                                                <img style="width:40%" src="css/undraw_void_-3-ggu.svg" alt="">
-                                            </center>
-                                        </div>
-                                    </div>
-                                </center>
-                            </div>
-                        </div>
                     </div>
 
                 </div>
