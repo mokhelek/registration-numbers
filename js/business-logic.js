@@ -39,6 +39,8 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
         return registrationFormat.test(input)
     }
 
+   
+
     function countForTown() {
         if (registrationNumbers[registrationNumbers.length - 1].startsWith("CA")) {
             countingPlaces["Cape Town"]++;
@@ -53,8 +55,9 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
         } else if (registrationNumbers[registrationNumbers.length - 1].startsWith("CK")) {
             countingPlaces["Malmesbury"]++;
         } else {
-            alert("unknown location");
+            return false;
         }
+        return true ; // ? if process successful
     }
 
     function getCountingPlaces() {
@@ -71,7 +74,6 @@ function regNumbersFactory(regNumbersData, countPlacesData) {
         handleDuplicates,
         getCountingPlaces,
         regFormatCheck,
-        
-    
+            
     };
 }

@@ -60,15 +60,26 @@ function displayFilteredReg() {
 // ************************************** END  *****************************************
 
 function townCounters() {
-    regFactory.countForTown();
+    let unknownLocation = document.querySelector("#unknown-location-error");
 
-    cptCounter.textContent = regFactory.getCountingPlaces()["Cape Town"];
-    stellenboschCounter.textContent = regFactory.getCountingPlaces()["Stellenbosch"];
-    bellvilleCounter.textContent = regFactory.getCountingPlaces()["Bellville"];
-    paarlCounter.textContent = regFactory.getCountingPlaces()["Paarl"];
-    krCounter.textContent = regFactory.getCountingPlaces()["Kuils River"];
-    malmesburyCounter.textContent = regFactory.getCountingPlaces()["Malmesbury"];
+    if(regFactory.countForTown() == true){
 
+        cptCounter.textContent = regFactory.getCountingPlaces()["Cape Town"];
+        stellenboschCounter.textContent = regFactory.getCountingPlaces()["Stellenbosch"];
+        bellvilleCounter.textContent = regFactory.getCountingPlaces()["Bellville"];
+        paarlCounter.textContent = regFactory.getCountingPlaces()["Paarl"];
+        krCounter.textContent = regFactory.getCountingPlaces()["Kuils River"];
+        malmesburyCounter.textContent = regFactory.getCountingPlaces()["Malmesbury"];
+    
+    }else{
+        unknownLocation.style.display = "block";
+        setTimeout(function () {
+            unknownLocation.style.display = "none";
+        }, 3000);
+        regNumList.removeChild(regNumList.childNodes[0])
+
+
+    }
     localStorage["counting_towns"] = JSON.stringify(regFactory.getCountingPlaces());
 }
 
