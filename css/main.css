@@ -21,7 +21,7 @@ body {
      color:rgb(48, 48, 48);
 }
 
-li {
+.reg-nums-list li {
     list-style: none;
     padding: 0.6rem;
     border: 1px gray solid;
@@ -35,6 +35,11 @@ li {
     font-size: 2.5rem;
     color: black;
 }
+
+/* #dropdown-menu li{
+    font-family: sans-serif !important;
+    font-size: 1rem;
+} */
 
 #town {
     color: rgb(118, 117, 117);

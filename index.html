@@ -149,22 +149,45 @@
                         <div style="height: 700px; overflow-y: scroll">
                             <div class="container" style="border-left: 1px rgb(177, 177, 177) solid">
                                 <div class="d-flex justify-content-start">
-                                    <div class="btn-group">
+
+
+
+                                    <select >
+                                        <option onclick="location.reload()"><a  href="#">All Towns </option>
+                                        <option onclick="filterBtnClicked('CA')">  Cape Town </option>
+                                        <option onclick="filterBtnClicked('CL')"> Stellenbosch  </option>
+                                        <option onclick="filterBtnClicked('CF')">  Kuils River </option>
+                                        <option onclick="filterBtnClicked('CK')">   Malmesbury </option>
+                                        <option onclick="filterBtnClicked('CJ')" >  Paarl </option>
+                                        <option onclick="filterBtnClicked('CY')" > Bellville</option>
+                                    </select>
+
+                                    <!-- <div class="btn-group">
                                         <button type="button" id="filter-btn" class="btn btn-outline-secondary btn-sm">Filter</button>
                                         <button type="button" class="btn btn-outline-secondary btn-sm dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
                                             <span class="visually-hidden">Toggle Dropdown</span>
                                         </button>
 
-                                        <ul class="dropdown-menu">
-                                            <option><a class="dropdown-item" onclick="location.reload()" href="#">All Towns</a></option>
-                                            <option><a class="dropdown-item" onclick="filterBtnClicked('CA')" href="#">Cape Town</a></option>
-                                            <option><a class="dropdown-item" onclick="filterBtnClicked('CL')" href="#">Stellenbosch</a></option>
-                                            <option><a class="dropdown-item" onclick="filterBtnClicked('CF')" href="#">Kuils River</a></option>
-                                            <option><a class="dropdown-item" onclick="filterBtnClicked('CK')" href="#">Malmesbury</a></option>
-                                            <option><a class="dropdown-item" onclick="filterBtnClicked('CJ')" href="#">Paarl</a></option>
-                                            <option><a class="dropdown-item" onclick="filterBtnClicked('CY')" href="#">Bellville</a></option>
+                                        <ul id="dropdown-menu" class="dropdown-menu">
+                                            <li><a class="dropdown-item" onclick="location.reload()" href="#">All Towns</a></li>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CA')" href="#">Cape Town</a></li>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CL')" href="#">Stellenbosch</a></li>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CF')" href="#">Kuils River</a></li>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CK')" href="#">Malmesbury</a></li>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CJ')" href="#">Paarl</a></li>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CY')" href="#">Bellville</a></li>
                                         </ul>
-                                    </div>
+
+                                        <select id="dropdown-menu" class="dropdown-menu">
+                                            <option onclick="location.reload()"><a  href="#">All Towns</a></option>
+                                            <option><a  onclick="filterBtnClicked('CA')" href="#">Cape Town</a></option>
+                                            <option><a  onclick="filterBtnClicked('CL')" href="#">Stellenbosch</a></option>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CF')" href="#">Kuils River</a></li>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CK')" href="#">Malmesbury</a></li>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CJ')" href="#">Paarl</a></li>
+                                            <li><a class="dropdown-item" onclick="filterBtnClicked('CY')" href="#">Bellville</a></li>
+                                        </select>
+                                    </div> -->
                                     <!-- todo: #########################  Trigger a confirm message instead #############################   -->
                                     <button style="width: 80px; margin-left: 1rem; border: none" id="clear-btn" class="btn btn-outline-secondary btn-sm">
                                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
