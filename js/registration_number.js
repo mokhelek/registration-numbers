@@ -36,28 +36,25 @@ paarlCounter.textContent = countingPlaces["Paarl"];
 krCounter.textContent = countingPlaces["Kuils River"];
 malmesburyCounter.textContent = countingPlaces["Malmesbury"];
 
-
 // ************************************** END  *****************************************
 
 // ************************** Filtered Display Of Registration Numbers *******************
 function displayFilteredReg() {
-
     let regList = document.querySelectorAll("li");
     let notFound = document.querySelector(".not-found");
-    notFound.style.display = "none" 
+    notFound.style.display = "none";
     regList.forEach(function (e) {
         e.style.display = "none";
     });
-    if(registrationNumbers.length > 0){
-    
+    if (registrationNumbers.length > 0) {
         for (let i = 0; i < registrationNumbers.length; i++) {
             const listItem = document.createElement("li");
-    
+
             listItem.textContent = registrationNumbers[i];
             regNumList.appendChild(listItem);
         }
-    }else{
-        notFound.style.display = "block"
+    } else {
+        notFound.style.display = "block";
     }
 }
 // ************************************** END  *****************************************
@@ -75,29 +72,25 @@ function townCounters() {
     localStorage["counting_towns"] = JSON.stringify(regFactory.getCountingPlaces());
 }
 
-
-
 function addRegistration() {
     let duplicateError = document.querySelector("#duplicate-error");
     let emptyInputError = document.querySelector("#empty-input-error");
     let formatError = document.querySelector("#format-error");
 
-
     if (regInput.value != "") {
-        if(regFactory.regFormatCheck(regInput.value.replace(/\s/g,""))) {
-
-            if (regFactory.handleDuplicates( (regInput.value.toUpperCase()).replace(/\s/g,"") )) {
+        if (regFactory.regFormatCheck(regInput.value.replace(/\s/g, ""))) {
+            if (regFactory.handleDuplicates(regInput.value.toUpperCase().replace(/\s/g, ""))) {
                 const listItem = document.createElement("li");
-    
-                regFactory.addRegNum(( regInput.value.toUpperCase()).replace(/\s/g,"") );
-    
+
+                regFactory.addRegNum(regInput.value.toUpperCase().replace(/\s/g, ""));
+
                 listItem.textContent = registrationNumbers[registrationNumbers.length - 1];
                 regNumList.appendChild(listItem);
-                
-                regNumList.insertBefore( listItem, regNumList.childNodes[0])
+
+                regNumList.insertBefore(listItem, regNumList.childNodes[0]);
 
                 localStorage["regNumbersList"] = regFactory.getRegistrations();
-    
+
                 townCounters();
             } else {
                 duplicateError.style.display = "block";
@@ -105,7 +98,7 @@ function addRegistration() {
                     duplicateError.style.display = "none";
                 }, 3000);
             }
-        }else{
+        } else {
             formatError.style.display = "block";
             setTimeout(function () {
                 formatError.style.display = "none";
@@ -126,7 +119,9 @@ addButton.addEventListener("click", addRegistration);
 
 const clearButton = document.querySelector("#clear-btn");
 clearButton.addEventListener("click", function () {
-    regFactory.clearData();
+    if (confirm("Your data will be permanently deleted")) {
+        regFactory.clearData();
+    }
 });
 
 // Todo : ############################################ The Filter Function #######################################
