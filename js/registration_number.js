@@ -93,7 +93,9 @@ function addRegistration() {
     
                 listItem.textContent = registrationNumbers[registrationNumbers.length - 1];
                 regNumList.appendChild(listItem);
-    
+                
+                regNumList.insertBefore( listItem, regNumList.childNodes[0])
+
                 localStorage["regNumbersList"] = regFactory.getRegistrations();
     
                 townCounters();
