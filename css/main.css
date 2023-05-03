@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 @font-face {
     font-family: CarGo;
     src: url("CarGoFrame31Demo-1Bg2.ttf");
@@ -7,9 +8,11 @@
     src: url("CarGoPlain31Demo-npBg.ttf");
 }
 
+
+
 body {
     background-color: rgb(255, 255, 255);
-}
+    font-family: 'Poppins', sans-serif;}
 
 #title {
     font-family: Adventure;
@@ -37,10 +40,12 @@ body {
 }
 
 select{
-    border-radius: 0;
+    border-radius: 5px;
     padding: 0.45rem;
-    background-color: rgb(237, 237, 237);
-    border: 1px rgb(182, 182, 182) solid;
+    background-color: rgb(220, 227, 255);
+    border: 1px rgb(163, 163, 255) solid;
+    color: rgb(50, 50, 50);
+
 }
 
 #town {
