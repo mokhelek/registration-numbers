@@ -137,7 +137,10 @@ clearButton.addEventListener("click", function () {
 
 // Todo : ############################################ The Filter Function #######################################
 
-function filterBtnClicked(town) {
-    registrationNumbers = regFactory.filterRegNumbers(town);
+let dropDown = document.querySelector("#dropDown");
+
+dropDown.addEventListener("change",function(){
+    registrationNumbers = regFactory.filterRegNumbers(dropDown.value);
     displayFilteredReg();
-}
+})
+
