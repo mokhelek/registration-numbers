@@ -85,7 +85,7 @@ li {
     border: 1px rgb(208, 0, 0) solid;
     display: none;
 }
-#warning-error{
+#duplicate-error{
     background-color: rgba(255, 128, 0, 0.124) !important;
     color:rgb(255, 103, 32) !important;
     border: 1px rgb(241, 152, 9) solid !important;
